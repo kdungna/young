@@ -29,7 +29,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Html->meta('icon');
 
 		echo $this->Html->css('cake.generic');
-
+		echo $this->Html->css('bootstrap');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
@@ -37,14 +37,30 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 </head>
 <body>
 	<div id="container">
-		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
+<!--		<div id="header">-->
+<!--			<h1>--><?php //echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?><!--</h1>-->
+<!--		</div>-->
+		<div class="nav navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="row">
+					<ul class="no">
+						<li>About</li>
+						<li>Contact</li>
+						<li>Help</li>
+					</ul>
+				</div>
+			</div>
 		</div>
 		<div id="content">
 
-			<?php echo $this->Session->flash(); ?>
-
-			<?php echo $this->fetch('content'); ?>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10">
+						<?php echo $this->Session->flash(); ?>
+						<?php echo $this->fetch('content'); ?>
+					</div>
+				</div>
+			</div>
 		</div>
 		<div id="footer">
 			<?php echo $this->Html->link(
